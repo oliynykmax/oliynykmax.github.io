@@ -49,52 +49,76 @@
 <body class="relative overflow-x-hidden">
     <div class="hex-grid fixed inset-0 pointer-events-none z-0"></div>
     
-    <main class="relative z-10 w-full max-w-2xl">
+    <main class="relative z-10 w-full max-w-2xl my-12">
         <header class="mb-12 text-center">
-            <h1 class="text-4xl font-bold tracking-tighter mb-2">MAX <span class="text-yellow">OLIINYK</span></h1>
-            <p class="text-text-muted text-sm uppercase tracking-[0.2em]">Public Index & Project Hub</p>
+            <h1 class="text-4xl font-bold tracking-tighter mb-2 italic">MAX <span class="text-yellow">OLIINYK</span></h1>
+            <p class="text-text-muted text-[10px] uppercase tracking-[0.4em]">Public Index & Project Hub</p>
         </header>
 
         <div class="space-y-4">
-            <!-- Project Card -->
+            <!-- Project Card: oliinyk.dev -->
             <a href="https://oliinyk.dev" class="group block p-6 border border-border bg-black/50 stripe-bg hover:border-yellow transition-all duration-300 card-glow">
                 <div class="flex justify-between items-start mb-2">
-                    <h2 class="text-xl font-bold group-hover:text-yellow transition-colors">oliinyk.dev</h2>
-                    <span class="text-yellow text-xs border border-yellow px-2 py-1 rounded-sm uppercase tracking-wider font-bold">Main Site</span>
+                    <h2 class="text-xl font-bold group-hover:text-yellow transition-colors italic">oliinyk.dev</h2>
+                    <span class="text-yellow text-[10px] border border-yellow px-2 py-1 rounded-sm uppercase tracking-wider font-bold">Main Site</span>
                 </div>
-                <p class="text-text-muted text-sm">Personal portfolio, blog, and showcase of core software engineering work.</p>
+                <p class="text-text-muted text-sm leading-relaxed">Portfolio & Blog. Central hub for software engineering projects, research, and technical writeups.</p>
             </a>
 
-            <!-- Project Card -->
+            <!-- Project Card: exam-timer -->
             <a href="https://oliynykmax.github.io/exam-timer" class="group block p-6 border border-border bg-black/50 hover:border-yellow transition-all duration-300 card-glow">
                 <div class="flex justify-between items-start mb-2">
-                    <h2 class="text-xl font-bold group-hover:text-yellow transition-colors">Exam Timer</h2>
-                    <span class="text-text-muted text-[10px] border border-border px-2 py-1 rounded-sm uppercase tracking-wider font-bold">App</span>
+                    <h2 class="text-xl font-bold group-hover:text-yellow transition-colors italic">Exam Timer</h2>
+                    <span class="text-text-muted text-[10px] border border-border px-2 py-1 rounded-sm uppercase tracking-wider font-bold">Utility</span>
                 </div>
-                <p class="text-text-muted text-sm">A minimalistic, focused timer tool for managing exam sessions and intervals.</p>
+                <p class="text-text-muted text-sm leading-relaxed">Minimalist exam session management. Focused interface for high-stakes timing and interval tracking.</p>
             </a>
 
-            <!-- Project Card -->
+            <!-- Project Card: nmm -->
             <a href="https://oliynykmax.github.io/nmm" class="group block p-6 border border-border bg-black/50 hover:border-yellow transition-all duration-300 card-glow">
                 <div class="flex justify-between items-start mb-2">
-                    <h2 class="text-xl font-bold group-hover:text-yellow transition-colors">NMM</h2>
+                    <h2 class="text-xl font-bold group-hover:text-yellow transition-colors italic">NMM Mirror</h2>
                     <span class="text-text-muted text-[10px] border border-border px-2 py-1 rounded-sm uppercase tracking-wider font-bold">Mirror</span>
                 </div>
-                <p class="text-text-muted text-sm">Clean, bilingual mirror of the LUT Numerical Methods course page. Rickroll-free UI.</p>
+                <p class="text-text-muted text-sm leading-relaxed">Clean LUT Numerical Methods course mirror. Stripped of bloat, bilingual, and optimized for quick access.</p>
             </a>
 
-            <!-- Project Card -->
+            <!-- Project Card: vita-22 -->
             <a href="https://oliynykmax.github.io/vita-22" class="group block p-6 border border-border bg-black/50 hover:border-yellow transition-all duration-300 card-glow">
                 <div class="flex justify-between items-start mb-2">
-                    <h2 class="text-xl font-bold group-hover:text-yellow transition-colors">Vita-22</h2>
-                    <span class="text-text-muted text-[10px] border border-border px-2 py-1 rounded-sm uppercase tracking-wider font-bold">Experiment</span>
+                    <h2 class="text-xl font-bold group-hover:text-yellow transition-colors italic">Vita-22</h2>
+                    <span class="text-text-muted text-[10px] border border-border px-2 py-1 rounded-sm uppercase tracking-wider font-bold">Experimental</span>
                 </div>
-                <p class="text-text-muted text-sm">An eternal photo scroll experiment capturing moments and sequences.</p>
+                <p class="text-text-muted text-sm leading-relaxed">Infinite photo scroll exploration. A sequence-based visual experiment capturing moments in a flow.</p>
             </a>
+
+            <!-- Project Card: planet_guardian -->
+            <a href="https://github.com/EvAvKein/planet_guardian" class="group block p-6 border border-border bg-black/50 hover:border-yellow transition-all duration-300 card-glow">
+                <div class="flex justify-between items-start mb-2">
+                    <h2 class="text-xl font-bold group-hover:text-yellow transition-colors italic">Planet Guardian</h2>
+                    <span class="text-text-muted text-[10px] border border-border px-2 py-1 rounded-sm uppercase tracking-wider font-bold">Game Jam Winner</span>
+                </div>
+                <p class="text-text-muted text-sm leading-relaxed">Winner of "Best Gameplay" at Hive Game Jam. Protect the planet from asteroids while managing global temperature.</p>
+            </a>
+
+            <!-- Profile Links -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-12">
+                <a href="https://github.com/oliynykmax" target="_blank" class="flex items-center justify-between p-4 border border-border bg-black/30 hover:bg-yellow hover:text-bg transition-all duration-300 group">
+                    <span class="text-xs font-bold uppercase tracking-widest">GitHub Profile</span>
+                    <span class="text-lg group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+                <a href="mailto:hi@oliinyk.dev" class="flex items-center justify-between p-4 border border-border bg-black/30 hover:bg-yellow hover:text-bg transition-all duration-300 group">
+                    <span class="text-xs font-bold uppercase tracking-widest">Contact System</span>
+                    <span class="text-lg group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+            </div>
         </div>
 
-        <footer class="mt-16 text-center text-text-muted text-[10px] uppercase tracking-widest opacity-50">
-            &copy; 2026 Maksym Oliinyk &bull; System Ready
+        <footer class="mt-24 text-center">
+            <div class="h-px w-12 bg-border-light mx-auto mb-6"></div>
+            <p class="text-text-muted text-[9px] uppercase tracking-[0.6em] opacity-40">
+                &copy; 2026 Maksym Oliinyk &bull; Terminal Protocol v2.0
+            </p>
         </footer>
     </main>
 </body>
