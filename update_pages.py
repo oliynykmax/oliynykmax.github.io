@@ -154,6 +154,14 @@ def generate_html(repos):
                 </div>
                 <p class="text-text-muted text-sm leading-relaxed">Portfolio & Blog. Central hub for software engineering projects, research, and technical writeups.</p>
             </a>
+            
+            <!-- Auto-discovered separator -->
+            <div class="text-center my-8">
+                <div class="border-t border-border"></div>
+                <span class="text-text-muted text-xs uppercase tracking-wider bg-bg px-4 -mt-2 inline-block">auto discovered from GitHub</span>
+                <div class="border-t border-border"></div>
+            </div>
+            
 {cards_html}
         </div>
         
