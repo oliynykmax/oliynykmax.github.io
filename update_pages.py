@@ -211,7 +211,6 @@ def generate_html(repos):
         
         <footer class="mt-12 text-center text-text-muted text-xs">
             <p>Last updated: {datetime.now().strftime("%Y-%m-%d %H:%M UTC")}</p>
-            <p class="mt-2">Auto-discovered from GitHub Pages</p>
         </footer>
     </main>
 </body>
