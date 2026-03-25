@@ -13,6 +13,34 @@ GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "")
 GITHUB_USERNAME = "oliynykmax"
 API_BASE = "https://api.github.com"
 
+# Manually curated projects with custom descriptions
+MANUAL_PROJECTS = [
+    {
+        "name": "exam-timer",
+        "url": f"https://{GITHUB_USERNAME}.github.io/exam-timer",
+        "display_name": "Exam Timer",
+        "description": "Simple timer for exams and study intervals.",
+    },
+    {
+        "name": "nmm",
+        "url": f"https://{GITHUB_USERNAME}.github.io/nmm",
+        "display_name": "NMM Frontend",
+        "description": "Alternative frontend for the LUT Numerical Methods course page. No distractions, bilingual UI.",
+    },
+    {
+        "name": "lotus-scroll",
+        "url": f"https://{GITHUB_USERNAME}.github.io/lotus-scroll",
+        "display_name": "Lotus Scroll",
+        "description": "Buddhism memes dedicated website prepared for my friend Vita on her birthday occasion.",
+    },
+    {
+        "name": "pongweb3d.me",
+        "url": "https://pongweb3d.me",
+        "display_name": "PongWeb3D",
+        "description": "Our last project at Hive Helsinki. A 3D Pong experience. Status: might be down or up, depending on our mood.",
+    },
+]
+
 
 def get_repos_with_pages():
     """Fetch all repositories with GitHub Pages enabled"""
@@ -67,17 +95,34 @@ def get_repos_with_pages():
 
 def generate_html(repos):
     """Generate HTML for the index page"""
-    cards_html = ""
 
+    # Get list of manual project names for filtering
+    manual_names = {p["name"] for p in MANUAL_PROJECTS}
+
+    # Generate HTML for manual projects
+    manual_html = ""
+    for project in MANUAL_PROJECTS:
+        manual_html += f'''
+            <!-- Project Card: {project["name"]} -->
+            <a href="{project["url"]}" class="group block p-6 border border-border bg-black/50 hover:border-yellow transition-all duration-300 card-glow">
+                <div class="mb-2">
+                    <h2 class="text-xl font-bold group-hover:text-yellow transition-colors">{project["display_name"]}</h2>
+                </div>
+                <p class="text-text-muted text-sm leading-relaxed">{project["description"]}</p>
+            </a>
+'''
+
+    # Generate HTML for auto-discovered projects (excluding manual ones)
+    auto_html = ""
     for repo in repos:
-        # Skip the main site itself
-        if repo["name"] == "oliynykmax.github.io":
+        # Skip main site and manual projects
+        if repo["name"] == "oliynykmax.github.io" or repo["name"] in manual_names:
             continue
 
         description = repo["description"] or "No description available"
         name = repo["name"].replace("-", " ").title()
 
-        cards_html += f'''
+        auto_html += f'''
             <!-- Project Card: {repo["name"]} -->
             <a href="{repo["url"]}" class="group block p-6 border border-border bg-black/50 hover:border-yellow transition-all duration-300 card-glow">
                 <div class="mb-2">
@@ -154,15 +199,14 @@ def generate_html(repos):
                 </div>
                 <p class="text-text-muted text-sm leading-relaxed">Portfolio & Blog. Central hub for software engineering projects, research, and technical writeups.</p>
             </a>
-            
+{manual_html}
             <!-- Auto-discovered separator -->
             <div class="text-center my-8">
                 <div class="border-t border-border"></div>
                 <span class="text-text-muted text-xs uppercase tracking-wider bg-bg px-4 -mt-2 inline-block">auto discovered from GitHub</span>
                 <div class="border-t border-border"></div>
             </div>
-            
-{cards_html}
+{auto_html}
         </div>
         
         <footer class="mt-12 text-center text-text-muted text-xs">
